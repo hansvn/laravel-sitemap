@@ -95,9 +95,12 @@ class Sitemap
 
             if ($translation)
             {
-                foreach ($translation as $key => $value)
+                foreach ($translation as $k => $trans)
                 {
-                    $translation[$key] = htmlentities($value, ENT_XML1);
+                    foreach ($trans as $key => $value)
+                    {
+                        $translation[$k][$key] = htmlentities($value, ENT_XML1);
+                    }
                 }
             }
         }
